@@ -3,6 +3,7 @@ BEN IS HERE
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src = "zomato_cuisines.js"></script>
+	<script src = "zomato_restaurants.js"></script>
 	<script type="text/javascript" charset="utf-8">
             
                 $(document).ready(function()
@@ -11,6 +12,8 @@ BEN IS HERE
 					   console.log(c_list);
 					   var c_id = get_cuisineId("Pizza");					   
 					   console.log(c_id);
+					   get_restaurants(c_id);
+					   
                     });
                 
         </script>
