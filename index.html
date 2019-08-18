@@ -11,34 +11,31 @@
             
                 $(document).ready(function()
                     {
-						var c_list = get_cuisineList();
-						console.log(c_list);
-						var c_id = get_cuisineId("Pizza");					   
-						console.log(c_id);
-						get_restaurants(c_id, function (data){
-							console.log(data);
-						});
-
-						$("#search").autocomplete({
+						$("#searchbar").autocomplete({
 							minLength: 0,
-							source:c_list,
+							source:get_cuisineList(),
 							focus: function( event, ui ) {
-								$( "#search" ).val( ui.item );
+								$( "#searchbar" ).val( ui.item.label );
 								return false;
 							},
 							select: function( event, ui ) {
-								$("#search").val(ui.item);
+								$("#searchbar").val(ui.item.label);
 								return false;
-							}
-
-							
-							   
+							}	   
 						})
-						.autocomplete( "instance" )._renderItem = function( ul, item ) {
-							return $( "<li>" )
-								.append( "<div>" + item.label + "</div>" )
-								.appendTo( ul );
-   							};
+
+						$( "#clicking" ).click(function() {
+
+							var search = $('#searchbar').val();
+							console.log(search)
+							var c_list = get_cuisineList();
+							console.log(c_list);
+							var c_id = get_cuisineId(search);					   
+							console.log(c_id);
+							get_restaurants(c_id, function (data){
+								console.log(data);
+							});
+						});
 				});
         </script>
 </head>    
@@ -81,7 +78,7 @@
 
 
 											   <div class="col-xs-9 col-md-9">
-													 <input type="text" id="search" class="form-control">
+													 <input type="text" class="form-control" id='searchbar'>
 												 </div>
 
 												
@@ -90,7 +87,7 @@
 												 
 										 </div>
 										 <div class="row" style="text-align: center;">
-												 <button type="button" class="btn btn-primary">Look for restaurants!</button>
+												 <button type="button" class="btn btn-primary" id="clicking">Look for restaurants!</button>
 										 </div>
 						 </div>
 						 <div class="">
