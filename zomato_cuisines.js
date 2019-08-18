@@ -1,6 +1,19 @@
-function get_cuisines(){
-	return {
-    "cuisines": [
+function get_cuisineId(name){
+
+	for(var i=0; i<list_cuisine.length; i++){
+		if (list_cuisine[i]["cuisine"]["cuisine_name"] == name)
+			return list_cuisine[i]["cuisine"]["cuisine_id"];
+	}
+}
+
+function get_cuisineList(){
+	var cuisine_names= [];
+	for(var i=0; i<list_cuisine.length; i++){
+		cuisine_names.push(list_cuisine[i]["cuisine"]["cuisine_name"]);		
+	}
+	return cuisine_names;
+}
+var  list_cuisine = [
         {
             "cuisine": {
                 "cuisine_id": 6,
@@ -686,6 +699,3 @@ function get_cuisines(){
             }
         }
     ]
-};
-
-}
