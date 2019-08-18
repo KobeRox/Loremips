@@ -1,4 +1,5 @@
-{
+function get_cuisines(){
+	return {
     "cuisines": [
         {
             "cuisine": {
@@ -685,4 +686,6 @@
             }
         }
     ]
+};
+
 }
