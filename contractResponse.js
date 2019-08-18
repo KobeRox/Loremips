@@ -1,21 +1,12 @@
-var restaurantName
-var address
-var allergies =[]
+function convertContract(input) {
+  var results = [];
 
-var converted = {
-    restaurantName,
-    address,
-    allergies = []
-
+  for (var x = 0; x < input.results_shown; x++) {
+    results.push({
+      restaurantName: input.restaurants[x].restaurant.name,
+      address: input.restaurants[x].restaurant.location.address,
+      allergies: input.restaurants[x].restaurant.cuisines.split(",")
+    });
+  }
+  return results;
 }
-
-function convertContract(obj){
-for(var x=0;x<obj.results_shown;x++){
-    this.restaurantName.push(obj.restaurants.restaurant[x].name)
-    this.address.push(obj.restaurants.restaurant[x].location.address)
-    this.allergies.push(obj.restaurants.restaurant[x].cuisines)
-}
-console.log(converted)
-return converted
-}
- 
