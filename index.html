@@ -6,7 +6,8 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	<script src = "zomato_cuisines.js"></script>
 	<script src = "zomato_restaurants.js"></script>
-	<script src = "contractResponse.js"></script>
+    <script src = "contractResponse.js"></script>
+    <script src ="convertDataToHtml.js"></script>
 	<script type="text/javascript" charset="utf-8">
             
                 $(document).ready(function()
@@ -33,7 +34,8 @@
 							var c_id = get_cuisineId(search);					   
 							console.log(c_id);
 							get_restaurants(c_id, function (data){
-								console.log(data);
+                                console.log(data);
+                                convertDataToHtml(data);          
 							});
 						});
 				});
@@ -100,24 +102,20 @@
 									 <div class="col-xs-6 col-md-6" style="text-align: center;">Address</div>
 								 </div>
 								 <div class="row">
-									 <div class="col-xs-6 col-md-6" style="text-align: center;">
-									 <ul>
-									  <li>Name1</li>
-									  <li>Name2</li>
-									  <li>Name3</li>
-									  <li>Name4</li>
-									  <li>Name5</li>
-									 </ul>
-									 </div>
-									 <div class="col-xs-6 col-md-6" style="text-align: center;">
-									 <ul>
-									  <li>Address1</li>
-									  <li>Address2</li>
-									  <li>Address3</li>
-									  <li>Address4</li>
-									  <li>Address5</li>
-									 </ul>
-									 </div>
+								<div class="col-xs-12 col-md-12">
+                                        <table class="table">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col">Restaurant Name</th>
+                                                    <th scope="col">Alergies</th>
+                                                    <th scope="col">Address</th>
+                                                  </tr>
+                                                  <tbody id="restoResults">
+                                                    
+                                                  </tbody>
+                                                </thead>
+                                              </table>   
+                                </div>
 								 </div>
 						 </div>
 					 </div>
