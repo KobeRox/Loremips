@@ -4,14 +4,19 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src = "zomato_cuisines.js"></script>
+	<script src = "zomato_restaurants.js"></script>
+	<script src = "contractResponse.js"></script>
 	<script type="text/javascript" charset="utf-8">
             
                 $(document).ready(function()
                     {
-                       var c_list = get_cuisineList();
-					   console.log(c_list);
-					   var c_id = get_cuisineId("Pizza");					   
-					   console.log(c_id);
+						var c_list = get_cuisineList();
+						console.log(c_list);
+						var c_id = get_cuisineId("Pizza");					   
+						console.log(c_id);
+						get_restaurants(c_id, function (data){
+							console.log(data);
+						});
                     });
                 
         </script>
