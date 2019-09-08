@@ -21,10 +21,7 @@
                 
                 minLength: 0,
                 source: get_cuisineList(),
-                focus: function (event, ui) {
-                    $("#searchbar").val(ui.item.label);
-                    return false;
-                },
+                
                 select: function (event, ui) {
                     $("#searchbar").val(ui.item.label);
                     return false;
