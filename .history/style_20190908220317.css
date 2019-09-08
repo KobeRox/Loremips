@@ -1,5 +1,6 @@
-#backgoundimg {
+.background {
   background-image: "background.jpg";
+  background-color: #9ce7f5;
 }
 
 #searchbar {

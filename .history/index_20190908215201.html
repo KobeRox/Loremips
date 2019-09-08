@@ -47,10 +47,10 @@
     </script>
 </head>
 
-<body  style="background-color:powderblue;">
+<body >
     <div class="container">
-        <div class="panel-body" id="backgoundimg">
-            <br><br><br>
+        <div class="panel-body">
+
             <div class="row" style="text-align: center;">
                 <h2>Restaurant Finder</h2>
             </div>
@@ -58,9 +58,13 @@
 <br><br><br><br><br><br>
         
             <div class="row" style="margin-bottom: 50px;">
-               
+                <div class="col-xs-3 col-md-3">
+                    <p>Food Type</p>
+                </div>
+                                
+            
                 <div class="col-xs-9 col-md-9">
-                    <input type="text" class="form-control" id='searchbar' placeholder="type what you feel like to have... ">
+                    <input type="text" class="form-control" id='searchbar' size="3">
                 </div>
                 
             </div>
@@ -79,9 +83,10 @@
                         <tr>
                             <th scope="col">Restaurant Name</th>
                             <th scope="col">Address</th>
-                            <th scope="col">Cousines</th>
+                            <th scope="col">Allergies</th>
                         </tr>
                     <tbody id="restoResults">
+
                     </tbody>
                     </thead>
                 </table>

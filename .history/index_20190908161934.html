@@ -1,8 +1,6 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
@@ -16,9 +14,7 @@
     <script type="text/javascript" charset="utf-8">
 
         $(document).ready(function () {
-            
             $("#searchbar").autocomplete({
-                
                 minLength: 0,
                 source: get_cuisineList(),
                 focus: function (event, ui) {
@@ -33,13 +29,13 @@
 
             $("#clicking").click(function () {
                 var search = $('#searchbar').val();
-                //console.log(search)
+                console.log(search)
                 var c_list = get_cuisineList();
-                //console.log(c_list);
+                console.log(c_list);
                 var c_id = get_cuisineId(search);
-                //console.log(c_id);
+                console.log(c_id);
                 get_restaurants(c_id, function (data) {
-                    //console.log(data);
+                    console.log(data);
                     convertDataToHtml(data);
                 });
             });
@@ -47,22 +43,55 @@
     </script>
 </head>
 
-<body  style="background-color:powderblue;">
+<body>
     <div class="container">
-        <div class="panel-body" id="backgoundimg">
-            <br><br><br>
-            <div class="row" style="text-align: center;">
-                <h2>Restaurant Finder</h2>
+        <div class="panel-heading">
+            <div class="row">
+				<div class="col-xs-12">
+					<img src="allerfreerestos_logo.png">
+				</div>
             </div>
-           
-<br><br><br><br><br><br>
-        
-            <div class="row" style="margin-bottom: 50px;">
-               
-                <div class="col-xs-9 col-md-9">
-                    <input type="text" class="form-control" id='searchbar' placeholder="type what you feel like to have... ">
+        </div>
+        <div class="panel-body">
+
+            <div class="row" style="text-align: center;">
+                <p>Restaurant Finder</p>
+            </div>
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="col-xs-3 col-md-3">
+                    <p>Allergies</p>
                 </div>
-                
+                <div class=" col-xs-3 checkbox" style="margin-top: 0px !important">
+                    <label>
+                        <input type="checkbox" value="apple">GF
+                    </label>
+                </div>
+                <div class=" col-xs-3 checkbox">
+                    <label>
+                        <input type="checkbox" value="pear">DF
+                    </label>
+                </div>
+                <div class=" col-xs-3 checkbox">
+                    <label>
+                        <input type="checkbox" value="orange">VG
+                    </label>
+                </div>
+                <!-- </div> -->
+            </div>
+            <div class="row" style="margin-bottom: 50px;">
+                <div class="col-xs-3 col-md-3">
+                    <p>Food Type</p>
+                </div>
+
+
+                <div class="col-xs-9 col-md-9">
+                    <input type="text" class="form-control" id='searchbar'>
+                </div>
+
+
+
+
+
             </div>
             <div class="row" style="text-align: center;">
                 <div class="col-xs-12 col-md-12">
@@ -79,9 +108,10 @@
                         <tr>
                             <th scope="col">Restaurant Name</th>
                             <th scope="col">Address</th>
-                            <th scope="col">Cousines</th>
+                            <th scope="col">Allergies</th>
                         </tr>
                     <tbody id="restoResults">
+
                     </tbody>
                     </thead>
                 </table>
@@ -91,8 +121,6 @@
         </div>
         <!-- <div class="panel-footer"></div> -->
     </div>
-
-    
 </body>
 
 </html>

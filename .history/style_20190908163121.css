@@ -1,0 +1,22 @@
+#input {
+  border-radius: 0px;
+  background: #4a4a4a;
+  color: #96f226;
+  border: 1px solid #454545;
+  height: 0 0 30px;
+}
+#input:hover {
+  background: #656565;
+}
+#input:active {
+  box-shadow: 0 0 30px #96f226;
+}
+#input:focus {
+  box-shadow: 0 0 30px #96f226;
+}
+
+.ui-menu .ui-menu-item a {
+  background: red;
+  height: 10px;
+  font-size: 8px;
+}
